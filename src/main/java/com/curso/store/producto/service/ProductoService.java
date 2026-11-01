@@ -1,7 +1,7 @@
 package com.curso.store.producto.service;
 
-import com.curso.store.producto.model.ProductoRequest;
-import com.curso.store.producto.model.ProductoResponse;
+import com.curso.store.producto.model.clase2.ProductoRequest;
+import com.curso.store.producto.model.clase2.ProductoResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -48,6 +48,11 @@ public class ProductoService {
         productos.remove(existente);
     }
 
+    public List<ProductoResponse> precioMenor(double limite) {
+        return productos.stream()
+                .filter(producto -> producto.precio() <= limite)
+                .toList();
+    }
 
 }
 

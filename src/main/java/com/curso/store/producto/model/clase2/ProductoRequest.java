@@ -1,4 +1,4 @@
-package com.curso.store.producto.model;
+package com.curso.store.producto.model.clase2;
 
 public record ProductoRequest(
         String nombre,

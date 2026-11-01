@@ -1,4 +1,4 @@
-package com.curso.store.producto.dto;
+package com.curso.store.producto.dto.clase1;
 
 public record OfertaResponse(
         String nombre,

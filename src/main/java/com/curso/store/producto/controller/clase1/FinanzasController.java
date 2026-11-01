@@ -1,7 +1,7 @@
-package com.curso.store.producto.controller;
+package com.curso.store.producto.controller.clase1;
 
-import com.curso.store.producto.dto.EnvioResponse;
-import com.curso.store.producto.dto.FinanzasResponse;
+import com.curso.store.producto.dto.clase1.EnvioResponse;
+import com.curso.store.producto.dto.clase1.FinanzasResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
