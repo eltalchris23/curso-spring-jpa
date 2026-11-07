@@ -1,5 +1,6 @@
 package com.curso.store.producto.service;
 
+import com.curso.store.producto.exception.ProductoNoEncontradoException;
 import com.curso.store.producto.model.clase2.ProductoRequest;
 import com.curso.store.producto.model.clase2.ProductoResponse;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,7 @@ public class ProductoService {
                 .filter(producto -> producto.id().equals(id))
                 .findFirst()
                 .orElseThrow(() ->
-                        new IllegalArgumentException("Producto no encontrado"));
+                        new ProductoNoEncontradoException(id));
     }
 
     public ProductoResponse crear(ProductoRequest request) {

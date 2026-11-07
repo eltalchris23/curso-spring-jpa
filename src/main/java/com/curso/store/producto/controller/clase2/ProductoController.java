@@ -3,6 +3,7 @@ package com.curso.store.producto.controller.clase2;
 import com.curso.store.producto.model.clase2.ProductoRequest;
 import com.curso.store.producto.model.clase2.ProductoResponse;
 import com.curso.store.producto.service.ProductoService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,18 +31,13 @@ public class ProductoController {
     }
 
     @PostMapping
-    public ResponseEntity<ProductoResponse> crear(
-            @RequestBody ProductoRequest request
-    ) {
+    public ResponseEntity<ProductoResponse> crear(@Valid @RequestBody ProductoRequest request) {
         ProductoResponse creado = productoService.crear(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(creado);
     }
 
     @PutMapping("/{id}")
-    public ProductoResponse actualizar(
-            @PathVariable Long id,
-            @RequestBody ProductoRequest request
-    ) {
+    public ProductoResponse actualizar(@PathVariable Long id, @Valid @RequestBody ProductoRequest request) {
         return productoService.actualizar(id, request);
     }
 
